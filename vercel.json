@@ -5,8 +5,7 @@
   ]}],
   "redirects":[
     {"source":"/openredir","destination":"https://example.org/EVIL","permanent":false},
-    {"source":"/protorel","destination":"//example.org/EVIL","permanent":false},
-    {"source":"/jsredir","destination":"javascript:alert(1)","permanent":false}
+    {"source":"/protorel","destination":"//example.org/EVIL","permanent":false}
   ],
   "rewrites":[{"source":"/rw","destination":"/index.html"}]
 }
