@@ -1,5 +1,12 @@
 {
-  "headers":[{"source":"/CANARY_SRC_<b>h</b>","headers":[{"key":"x-canary-<b>k</b>","value":"CANARY_VAL_<img src=x onerror=alert(1)>\"'></textarea>"}]}],
-  "redirects":[{"source":"/r_<svg/onload=alert(1)>","destination":"/d_<b>dest</b>"}],
-  "rewrites":[{"source":"/rw_<b>s</b>","destination":"/api/<b>x</b>"}]
+  "headers":[{"source":"/(.*)","headers":[
+    {"key":"x-canary","value":"CANARY_VAL_<img src=x onerror=alert(1)>"},
+    {"key":"x-crlf","value":"foo\r\nx-injected: CRLF_CANARY"}
+  ]}],
+  "redirects":[
+    {"source":"/openredir","destination":"https://example.org/EVIL","permanent":false},
+    {"source":"/protorel","destination":"//example.org/EVIL","permanent":false},
+    {"source":"/jsredir","destination":"javascript:alert(1)","permanent":false}
+  ],
+  "rewrites":[{"source":"/rw","destination":"/index.html"}]
 }
